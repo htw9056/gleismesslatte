@@ -299,8 +299,9 @@ Das Programmsymbol und die Dateieigenschaften der Starter stecken in
 ### GitHub Actions
 
 Der Workflow `.github/workflows/bauen.yml` baut bei jedem Push und führt den Selbsttest aus.
-Bei einem Tag `v*` (z. B. `v0.16`) erstellt er automatisch ein Release mit Windows-Zip und
-`.jar`.
+Gibt es für die Versionsnummer in `Version.java` noch kein Release, legt er beim Push auf
+`main` automatisch eines an (Tag `v0.xx`) und hängt Windows-Zip und `.jar` an. Für ein neues
+Release genügt es also, die Versionsnummer zu erhöhen und hochzuladen.
 
 ### Versionsnummer
 
