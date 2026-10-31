@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" width="900" height="470"><defs><radialGradient id="glas" cx="40%" cy="35%" r="70%"><stop offset="0%" stop-color="#e8f4ff"/><stop offset="55%" stop-color="#6d8fb0"/><stop offset="100%" stop-color="#25384d"/></radialGradient></defs><rect width="900" height="470" fill="#ffffff"/>
+<rect x="1" y="1" width="898" height="468" fill="none" stroke="#c9d0d8" stroke-width="2"/>
+<text x="20.0" y="42.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="28" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Detail Prisma – Korrektur bei Überhöhung</text>
+<text x="20.0" y="70.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="18" text-anchor="start" font-weight="normal" fill="#4a5563" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">(Neigung zur Verdeutlichung vergrößert)</text>
+<polygon points="194,384 260,358 266,420 200,446" fill="#c9ccd0" stroke="#55595e" stroke-width="2"/>
+<line x1="135.1" y1="406.2" x2="459.6" y2="275.1" stroke="#d39b00" stroke-width="12"/>
+<line x1="200.0" y1="380.0" x2="113.8" y2="166.7" stroke="#555" stroke-width="6"/>
+<circle cx="113.8" cy="166.7" r="20" fill="#d6531c" stroke="#7a2a08" stroke-width="2"/>
+<circle cx="113.8" cy="166.7" r="13" fill="url(#glas)"/>
+<line x1="113.8" y1="186.7" x2="113.8" y2="394.0" stroke="#1565c0" stroke-width="2.5" stroke-dasharray="8,6"/>
+<line x1="113.8" y1="380.0" x2="200.0" y2="380.0" stroke="#c62828" stroke-width="4"/>
+<circle cx="200.0" cy="380.0" r="6" fill="#1d2430"/>
+<text x="156.9" y="416.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" text-anchor="middle" font-weight="bold" fill="#c62828" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">h·sin α</text>
+<text x="101.8" y="283.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" text-anchor="end" font-weight="bold" fill="#1565c0" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">h·cos α</text>
+<text x="172.9" y="273.4" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">h</text>
+<text x="216.0" y="404.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Fahrkante (SO)</text>
+<text x="143.8" y="174.7" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Prisma</text>
+<text x="470.0" y="120.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Lagekorrektur zur tieferen Schiene:</text>
+<text x="470.0" y="152.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">y, x + h·sin α · e</text>
+<text x="470.0" y="184.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="24" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">z − h·cos α</text>
+<text x="470.0" y="226.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">u = Bezugsbasis · sin α</text>
+<text x="470.0" y="254.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">α = arcsin(u / 1,500 m)</text>
+<text x="470.0" y="296.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Beispiel u = 150 mm:</text>
+<text x="470.0" y="324.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">α ≈ 6,4 gon</text>
+<text x="470.0" y="352.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="22" text-anchor="start" font-weight="bold" fill="#1d2430" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Lage ≈ 13 mm, Höhe ≈ 0,7 mm</text>
+<text x="470.0" y="394.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#1565c0" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">blau gestrichelt: Lotrichtung</text>
+<text x="470.0" y="422.0" font-family="DejaVu Sans, Arial, sans-serif" font-size="20" text-anchor="start" font-weight="normal" fill="#c62828" stroke="#ffffff" stroke-width="5" stroke-linejoin="round" paint-order="stroke">Grenzwert EBO § 6 (3): 180 mm</text></svg>

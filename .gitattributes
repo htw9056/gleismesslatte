@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.bat text eol=crlf
+# Beispieldaten unverändert lassen (CRLF wie aus dem Instrument)
+beispiele/** -text
+*.png binary
+*.ico binary
+*.syso binary

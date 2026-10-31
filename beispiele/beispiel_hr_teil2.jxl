@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JOBFile jobName="Gleis" product="Trimble Access" productVersion="2025.10" version="7.0">
+  <FieldBook>
+    <StationRecord ID="0001"><StationName>ST2</StationName><TheodoliteHeight>1.587</TheodoliteHeight></StationRecord>
+    <TargetRecord ID="00000101"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>0.200</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P3031"><Name>3031</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3032"><Name>3032</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3033"><Name>3033</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3034"><Name>3034</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3035"><Name>3035</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3036"><Name>3036</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000101</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000102"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>1.300</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P5035"><Name>5035</Name><Code>SOL</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000102</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P5036"><Name>5036</Name><Code>SOR</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000102</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000103"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>0.200</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P3037"><Name>3037</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000103</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3038"><Name>3038</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000103</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000104"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>1.300</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P5037"><Name>5037</Name><Code>SOL</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000104</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P5038"><Name>5038</Name><Code>SOR</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000104</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000105"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>0.200</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P3039"><Name>3039</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000105</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3040"><Name>3040</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000105</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000106"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>1.300</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P5039"><Name>5039</Name><Code>SOL</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000106</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P5040"><Name>5040</Name><Code>SOR</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000106</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000107"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>0.200</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P3041"><Name>3041</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000107</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3042"><Name>3042</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000107</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000108"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>1.500</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P9021"><Name>9021</Name><Code>MAST</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000108</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000109"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>0.200</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P3043"><Name>3043</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3044"><Name>3044</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3045"><Name>3045</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3046"><Name>3046</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3047"><Name>3047</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3048"><Name>3048</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3049"><Name>3049</Name><Code>LI_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <PointRecord ID="P3050"><Name>3050</Name><Code>RE_GML</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000109</TargetID><StationID>0001</StationID></PointRecord>
+    <TargetRecord ID="00000110"><Prism><Type>Custom</Type></Prism><MeasurementMethod>BottomOfMount</MeasurementMethod><TargetHeight>1.500</TargetHeight><PrismConstant>0</PrismConstant></TargetRecord>
+    <PointRecord ID="P9027"><Name>9027</Name><Code>MAST</Code><Method>TargetFromStation</Method><Classification>Normal</Classification><Deleted>false</Deleted><TargetID>00000110</TargetID><StationID>0001</StationID></PointRecord>
+  </FieldBook>
+</JOBFile>

@@ -1,0 +1,18 @@
+# Eclipse / Build
+bin/
+build/
+dist/
+.metadata/
+*.class
+
+# Windows-Programme werden gebaut (GitHub Actions) bzw. als Release angehängt
+*.exe
+
+# Ergebnisse der Beispiele und lokale Einstellungen
+beispiele/*_ergebnis*
+sitzung.properties
+
+# Betriebssystem
+.DS_Store
+Thumbs.db
+desktop.ini

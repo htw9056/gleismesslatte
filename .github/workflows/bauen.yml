@@ -1,0 +1,61 @@
+name: Bauen und testen
+
+on:
+  push:
+    branches: [ main, master ]
+    tags: [ 'v*' ]
+  pull_request:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+
+concurrency:
+  group: bauen-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  bauen:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Übersetzen, Selbsttest, Gleismesslatte.jar
+        run: ./bauen.sh
+
+      - name: Go (Windows-Starter)
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
+      - name: Windows-Paket
+        run: ./windows/paket_bauen.sh
+
+      - name: Paket als Artefakt
+        uses: actions/upload-artifact@v4
+        with:
+          name: Gleismesslatte-Windows
+          path: dist/Gleismesslatte_V*_Windows.zip
+
+      - name: Release (nur bei Tag v*)
+        if: startsWith(github.ref, 'refs/tags/v')
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          DATEIEN="$(ls dist/Gleismesslatte_V*_Windows.zip) dist/Gleismesslatte.jar"
+          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
+            # Release wurde schon (z. B. auf github.com) angelegt: Dateien anhängen
+            gh release upload "$GITHUB_REF_NAME" $DATEIEN --clobber
+          else
+            gh release create "$GITHUB_REF_NAME" $DATEIEN \
+              --title "Gleismesslatte $GITHUB_REF_NAME" \
+              --notes "Windows: ZIP herunterladen, entpacken, Gleismesslatte.exe starten (Java 17+ erforderlich). Änderungen siehe CHANGELOG.md."
+          fi

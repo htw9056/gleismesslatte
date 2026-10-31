@@ -1,0 +1,79 @@
+Beispiel mit 500 Punkten – Gleismesslatte V0.16
+================================================
+
+DATEIEN
+  beispiel_500.txt        Leerzeichen getrennt, Aufbau P R H Z C, keine Kopfzeile
+                          (= Standardeinstellung, Kommentarzeilen mit # beschreiben die Abschnitte)
+  beispiel_500_csv.csv    dieselben Punkte als CSV: Semikolon, Dezimalkomma,
+                          Aufbau P C R H Z, 3 Kopfzeilen
+  beispiel_500_soll.csv   Sollwerte der Simulation je Paar (wahre Gleisachse,
+                          Überhöhung, Spurweite) zum Nachprüfen
+
+Die Punkte stammen aus einer simulierten Trasse (Gerade, Übergangsbögen,
+Rechtsbogen R = 500 m, Linksbogen R = 400 m, Längsneigung 4 ‰) mit 0,7 mm
+Messrauschen je Koordinate. Reflektorhöhe 0,130 m, Sollspurweite 1,458 m.
+
+EINSTELLUNGEN
+  beispiel_500.txt      : Achs-Codes = SOL,SOR   (sonst alles Standard)
+  beispiel_500_csv.csv  : Achs-Codes = SOL,SOR, Aufbau = P C R H Z, Kopfzeilen = 3
+  Paarbildung je nach Test "aufeinanderfolgend" oder "frei" (siehe unten)
+
+ABSCHNITTE
+  A  km 0,000–0,150  Gerade, u = 0, Code GML
+  B  km 0,155–0,265  Übergang Rechtsbogen, Rampe 0 → 120 mm, Codes LI_GML / RE_GML,
+                     jede 3. Lage in umgekehrter Punktreihenfolge gemessen
+  C  km 0,270–0,415  Rechtsbogen R = 500 m, u = 120 mm, Codes GML01 / gml01 / GML02
+  D  km 0,420–0,515  Übergang, Rampe 120 → 0 mm, Codes GML-L / GML-R in FREIER
+                     Reihenfolge: erst alle linken Punkte vorwärts, dann alle
+                     rechten rückwärts
+  E  km 0,520–0,615  Gerade mit Bahnsteig, Achs-Codes SOL / SOR / sol / Sor direkt
+                     auf SO gemessen (ohne Latte, keine Korrektur), Bahnsteigkante BSK
+  F  km 0,620–0,755  Übergang + Linksbogen R = 400 m, u 0 → 90 mm LINKS hoch,
+                     Codes L.GML / R.GML (Suffix mit Punkt)
+  G  km 0,760–0,770  dichte Lattenlagen alle 0,5 m, Code GML
+  H  km 0,775–0,800  Sonderfälle:
+                     8001/8002  Spurweite 1,600 m – außerhalb der Toleranz
+                     8003       GML-Punkt ohne Partner
+                     8004       Achs-Code-Punkt SOL ohne Partner
+                     8011/8012  Überhöhung 172 mm – Grenzwert 180 mm eingehalten
+                     8013/8014  Überhöhung 195 mm rechts hoch – GRENZWERT ÜBERSCHRITTEN
+                     8015/8016  Achs-Codes SOL/SOR, 188 mm links hoch – ÜBERSCHRITTEN
+                     8005       fehlerhafte Zeile (Höhe fehlt)
+                     8006       Werte mit Dezimalkomma, Code KS
+                     8007       Code mit Leerzeichen "SIGNAL ASIG 12"
+  sonstige           MAST (alle 25 m), FP (Festpunkte), BSK, KK (Kabelkanal) – unverändert
+
+ERWARTETE ERGEBNISSE (mit V0.16 geprüft)
+  Paarbildung "aufeinanderfolgend":
+    500 Punkte gelesen, 135 GML-Lagen + 21 Achs-Code-Paare = 156 Achspunkte
+    Abschnitt D wird nur zum Teil erkannt (frei gemessen) → Warnungen
+    "nicht gepaart" / "ohne Partner" für 4001–4038
+
+  Paarbildung "frei":
+    500 Punkte gelesen, 154 GML-Lagen + 21 Achs-Code-Paare = 175 Achspunkte
+    (alle Sollpaare gefunden)
+    Abschnitt G: Warnungen "nicht eindeutig" (dichte Lagen) – Paare trotzdem richtig
+    Größte Rampe im Protokoll in Abschnitt G: Rauschen auf 0,5 m Abstand wirkt
+    stark – in der Praxis Lattenlagen in größerem Abstand messen
+
+  beide Modi:
+    Warnungen für 8001, 8002, 8003 (GML ohne Partner), 8004 (Achs-Code ohne
+    Partner) und Zeile mit 8005 (Höhe fehlt); 8006 und 8007 werden korrekt gelesen.
+    Grenzwert Überhöhung 180 mm (EBO § 6 Abs. 3): 2 Überschreitungen –
+    8013-8014 (≈ 194 mm) und 8015-8016 (≈ 189 mm); Warnung, „ACHTUNG“-Meldung,
+    Spalte Grenzwert_u in der Spur-CSV und „!!“ im Überhöhungsprotokoll.
+    8011-8012 (≈ 171 mm) bleibt „ok“.
+    Die Sonderfälle liegen nur 1 m auseinander – die dort ausgewiesenen Rampen
+    sind deshalb künstlich groß und nicht praxisrelevant.
+    Codes nach Korrektur ohne GML: LI_GML → LI, GML-L → L, L.GML → L, GML → leer
+    Achs-Code-Punkte (SOL/SOR) bleiben unverändert inkl. Code.
+    Abweichung zu beispiel_500_soll.csv: Achse ≤ ca. 2 mm, Überhöhung und
+    Spurweite ≤ ca. 3 mm (entspricht dem simulierten Messrauschen).
+
+  CSV-Variante mit Aufbau P C R H Z und 3 Kopfzeilen liefert identische Ergebnisse.
+
+  Ergebnisdateien (Ausgabeformat "wie Eingabe"):
+    beispiel_500_ergebnis.txt      – Leerzeichen, Aufbau P R H Z C (wie Eingabe)
+    beispiel_500_csv_ergebnis.csv  – Semikolon, Dezimalkomma, 3 Kopfzeilen (wie Eingabe)
+  Beide lassen sich mit denselben Einstellungen wieder einlesen (675 Punkte =
+  500 gelesene Punkte + 175 Achspunkte; die fehlerhafte Zeile 8005 entfällt).

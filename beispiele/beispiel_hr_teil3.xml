@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LandXML xmlns="http://www.landxml.org/schema/LandXML-1.2" version="1.2">
+  <Survey>
+    <InstrumentSetup id="S3" stationName="ST3" instrumentHeight="1.598"><InstrumentPoint pntRef="ST3"/></InstrumentSetup>
+    <ObservationGroup id="OG3" setupID="S3">
+      <RawObservation setupID="S3" targetHeight="0.200" horizAngle="123.4567" zenithAngle="99.8765" slopeDistance="25.432"><TargetPoint pntRef="3051" code="LI_GML"/></RawObservation>
+      <RawObservation setupID="S3" targetHeight="0.200" horizAngle="123.4567" zenithAngle="99.8765" slopeDistance="25.432"><TargetPoint pntRef="3052" code="RE_GML"/></RawObservation>
+      <RawObservation setupID="S3" targetHeight="0.200" horizAngle="123.4567" zenithAngle="99.8765" slopeDistance="25.432"><TargetPoint pntRef="3053" code="LI_GML"/></RawObservation>
+      <RawObservation setupID="S3" targetHeight="0.200" horizAngle="123.4567" zenithAngle="99.8765" slopeDistance="25.432"><TargetPoint pntRef="3054" code="RE_GML"/></RawObservation>
+    </ObservationGroup>
+  </Survey>
+</LandXML>

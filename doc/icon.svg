@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2b4a6b"/>
+      <stop offset="1" stop-color="#162a40"/>
+    </linearGradient>
+    <radialGradient id="glas" cx="40%" cy="35%" r="70%">
+      <stop offset="0" stop-color="#eaf5ff"/>
+      <stop offset="0.55" stop-color="#7aa0c4"/>
+      <stop offset="1" stop-color="#22374d"/>
+    </radialGradient>
+  </defs>
+  <rect x="8" y="8" width="240" height="240" rx="44" fill="url(#bg)"/>
+  <!-- Schwelle, geneigt -->
+  <g transform="rotate(-9 128 176)">
+    <rect x="22" y="182" width="212" height="26" rx="4" fill="#8d8a84"/>
+    <!-- Schienen (Querschnitt) -->
+    <g fill="#c9ccd0" stroke="#55595e" stroke-width="2">
+      <path d="M44 182 h44 v-6 l-16 -4 v-28 l8 -4 v-12 h-28 v12 l8 4 v28 l-16 4 z"/>
+      <path d="M168 182 h44 v-6 l-16 -4 v-28 l8 -4 v-12 h-28 v12 l8 4 v28 l-16 4 z"/>
+    </g>
+    <!-- Latte -->
+    <rect x="34" y="114" width="188" height="16" rx="3" fill="#f2b81e" stroke="#7a5600" stroke-width="2"/>
+    <!-- Stäbe -->
+    <rect x="75" y="76" width="10" height="40" fill="#d7d9dc" stroke="#55595e" stroke-width="1.5"/>
+    <rect x="171" y="76" width="10" height="40" fill="#d7d9dc" stroke="#55595e" stroke-width="1.5"/>
+    <!-- Prismen -->
+    <circle cx="80" cy="62" r="26" fill="#d6531c" stroke="#6e2406" stroke-width="3"/>
+    <circle cx="80" cy="62" r="17" fill="url(#glas)"/>
+    <circle cx="176" cy="62" r="26" fill="#d6531c" stroke="#6e2406" stroke-width="3"/>
+    <circle cx="176" cy="62" r="17" fill="url(#glas)"/>
+  </g>
+</svg>

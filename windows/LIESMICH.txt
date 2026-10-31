@@ -1,0 +1,112 @@
+Gleismesslatte V0.16 – Windows
+==============================
+© Dipl.-Ing. (FH) Stefan Klein – MIT-Lizenz
+Quellcode: siehe GitHub-Projekt (README.md)
+
+PROGRAMME
+  Gleismesslatte.exe         Programmfenster mit Bild und Eingabefeldern
+  GleismesslatteKonsole.exe  für die Eingabeaufforderung / Stapelverarbeitung
+
+START (Fenster)
+  • Doppelklick auf Gleismesslatte.exe
+  • oder CSV-Datei auf Gleismesslatte.exe bzw. ins offene Fenster ziehen
+  Im Fenster einstellbar:
+      Eingabe-/Ausgabedatei
+      Spaltenaufbau              Standard P R H Z C (frei editierbar)
+      Trennzeichen               automatisch / Semikolon / Leerzeichen-Tab
+      Kopfzeilen überspringen    Standard 0 (0 bis 5)
+      Ausgabeformat              wie Eingabe (Standard) oder CSV mit Statusspalte
+      Reflektorhöhe h            Standard 0,130 m (0–0,5 m; Ersatzwert)
+      Messdatei(en) Reflektorh.  GSI / JXL / XML / Text-Tabelle – Höhe je Punkt, Knopf "Höhe suchen"
+      Höhen der Punktliste       Prismenmitte (hr = 0) oder um hr lotrecht reduziert
+      Lattenkonstante c          Standard 0,000 m (Prismen an der Fahrkante)
+      Sollspurweite              Standard 1,458 m
+      Toleranz ±                 Standard 0,100 m  (Paarbereich wird angezeigt)
+      Bezugsbasis Überhöhung     Standard 1,500 m (u = 1,500 m · sin α, Regelspur)
+      Grenzwert Überhöhung       Standard 180 mm (EBO § 6 Abs. 3)
+      Nachkommastellen Ausgabe   Standard 3 (wahlweise 4)
+      Paarbildung                aufeinanderfolgend (Standard) oder frei
+      Achs-Codes                 z. B. SOL,SOR – Gleisachse OHNE Korrektur
+      [x] Gleisachse berechnen   ja/nein
+      [x] Protokoll Überhöhung   ja/nein
+  Alle Eingaben werden automatisch gespeichert und beim nächsten Start geladen
+  (%APPDATA%\Gleismesslatte\sitzung.properties).
+  "Als Standard speichern" schreibt die Werte zusätzlich in gleismesslatte.properties
+  neben der .exe; "Werkseinstellung" setzt die Standardwerte.
+
+START (Konsole)
+  GleismesslatteKonsole.exe messung.csv ergebnis.csv h=0,13 c=0 spurweite=1,458 toleranz=0,1 achse=ja nachkommastellen=3 ueberhoehungsprotokoll=ja paarbildung=folge achscodes=SOL,SOR aufbau=P,R,H,Z,C trennzeichen=auto kopfzeilen=0 maxueberhoehung=180 ausgabeformat=eingabe hdateien=messung.gsi hbezug=reduziert
+
+EINGABEFORMAT
+  CSV (Semikolon) oder Text mit Leerzeichen/Tab, Dezimalpunkt oder -komma.
+  Standard-Spaltenfolge:  Punktnummer  Rechtswert  Hochwert  Höhe  Code
+  Aufbau-Kürzel: P = Punktnummer, R = Rechtswert, H = Hochwert, Z = Höhe,
+                 C = Code, - = Spalte überspringen   (z. B. "P C R H Z")
+  Kopfzeilen überspringen: 0 bis 5. Zeilen mit # und Leerzeilen werden ignoriert.
+  Alte CSV-Dateien (Punkt;Code;y;x;z): Aufbau P C R H Z, Kopfzeilen 1.
+  Punkte mit "GML" am Anfang oder Ende des Codes sind Lattenprismen,
+  z. B. GML, GML01, LI_GML, RE-GML, L.GML.
+
+BEISPIEL MIT 500 PUNKTEN
+  beispiel_500.txt / beispiel_500_csv.csv – alle Varianten, Beschreibung und
+  erwartete Ergebnisse in beispiel_500_LIESMICH.txt.
+
+ACHS-CODES (ohne Korrektur)
+  Zusätzliche Codes ohne GML, mehrere mit Komma oder Semikolon trennen, z. B. SOL,SOR.
+  Punkte mit diesen Codes werden paarweise zur Gleisachse gerechnet (gleiche
+  Paarbildung und Sollspurweite ± Toleranz, aber ohne Lattenkonstante c).
+  Die Punkte selbst bleiben unverändert – keine Reflektor- oder Überhöhungskorrektur,
+  der Code bleibt erhalten. Achspunkt: kleinste Nr. + "Achse".
+
+PAARBILDUNG
+  aufeinanderfolgend  zwei GML-Punkte direkt hintereinander bilden ein Paar
+  frei                GML-Punkte in beliebiger Reihenfolge, z. B. erst alle
+                      linken Schienenpunkte, dann alle rechten. Gepaart wird nach
+                      bester Übereinstimmung mit der Sollspurweite; bei mehreren
+                      möglichen Partnern erscheint eine Warnung "nicht eindeutig".
+
+ERGEBNIS
+  <name>_ergebnis.<endung>   Punktliste – im Format der Eingabe (gleiche Spalten,
+                             Trennzeichen, Dezimalzeichen, Kopfzeilen, Endung),
+                             mit denselben Einstellungen wieder einlesbar
+      - GML-Punkte auf SO korrigiert, GML-Kennung aus dem Code gelöscht
+        (LI_GML -> LI, GML-RE -> RE, GML -> leer)
+      - Gleisachse (falls gewählt): Punktnummer = kleinste Nummer des Paares
+        + "Achse", z. B. 101Achse, Code "Achse"
+      - alle anderen Punkte unverändert
+  <name>_ergebnis_spur.csv   Spurweite, Abweichung zur Sollspurweite,
+                             Überhöhung, Gleisachse je Lattenlage
+  <name>_ergebnis_ueberhoehung.txt
+                             Protokoll Überhöhung: Station, Neigung, u links/rechts,
+                             Rampe in mm/m und 1:n, Zusammenfassung
+
+REFLEKTORHÖHE AUS MESSDATEIEN
+  Eine oder mehrere Rohdateien wählen (Knopf … oder Dateien auf das Feld ziehen).
+  Erkannt werden: Leica GSI-8/16 (WI 87), Trimble JobXML (TargetHeight),
+  LandXML/XML (targetHeight u. ä.) und beliebige Text-Tabellen.
+  Text-Tabellen: Das Programm sucht die Spalte, in der die GML-Punkte Werte von
+  0–0,5 m haben (wenige verschiedene Werte, auch mm), und zeigt bei "Höhe suchen"
+  ein Fenster mit Tabellenvorschau und Vorschlag. Spalte übernehmen oder per
+  Auswahl/Klick auf die Spaltenüberschrift ändern. Die Wahl wird je Datei gespeichert.
+  Gültig 0–0,5 m; größere Werte (Lotstab) werden ignoriert, 0 = nicht eingetragen.
+  GML-Punkte ohne Wert erhalten den Feldwert h (Warnung).
+  WICHTIG: War hr im Instrument eingetragen, sind die exportierten Höhen schon
+  lotrecht um hr reduziert -> "Höhen der Punktliste = um Reflektorhöhe lotrecht
+  reduziert" wählen. Sonst entsteht ein Höhenfehler in Größe von hr.
+  Beispiel: beispiel_hr_punkte.txt + beispiel_hr_teil1.gsi / _teil2.jxl / _teil3.xml / _teil4.txt
+
+GRENZWERT ÜBERHÖHUNG
+  EBO § 6 Abs. 3: Die Überhöhung darf einschließlich der im Betrieb auftretenden
+  Abweichungen 180 mm nicht überschreiten. Jede Lage wird geprüft; Überschreitungen
+  erscheinen als Warnung, in der Spur-CSV (Spalte Grenzwert_u) und im
+  Überhöhungsprotokoll (!! und Liste in der Zusammenfassung).
+
+VORAUSSETZUNG
+  Java 17 oder neuer. Die .exe sucht automatisch in: JAVA_HOME, PATH,
+  Programme\Eclipse Adoptium / Java / Microsoft / Zulu / Amazon Corretto /
+  BellSoft und in der von Eclipse mitgebrachten Laufzeit.
+
+OHNE JAVA AUF DEM ZIEL-PC
+  Auf einem PC mit JDK 17+ einmal exe_bauen.bat ausführen.
+  Ergebnis: dist\Gleismesslatte\ – diesen ganzen Ordner weitergeben,
+  er enthält die Java-Laufzeit, beide Programme und braucht keine Installation.
