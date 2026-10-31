@@ -45,17 +45,23 @@ jobs:
           name: Gleismesslatte-Windows
           path: dist/Gleismesslatte_V*_Windows.zip
 
-      - name: Release (nur bei Tag v*)
-        if: startsWith(github.ref, 'refs/tags/v')
+      - name: Release (automatisch je Version, bei Push auf main oder Tag v*)
+        if: github.event_name != 'pull_request' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v'))
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          VERSION=$(sed -n 's/.*NUMMER = "\(.*\)".*/\1/p' src/de/gleismessung/Version.java)
+          TAG="v$VERSION"
           DATEIEN="$(ls dist/Gleismesslatte_V*_Windows.zip) dist/Gleismesslatte.jar"
-          if gh release view "$GITHUB_REF_NAME" >/dev/null 2>&1; then
-            # Release wurde schon (z. B. auf github.com) angelegt: Dateien anhängen
-            gh release upload "$GITHUB_REF_NAME" $DATEIEN --clobber
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            # Release dieser Version gibt es schon: Dateien nur bei Tag-Build erneuern
+            if [ "$GITHUB_REF_TYPE" = "tag" ]; then
+              gh release upload "$TAG" $DATEIEN --clobber
+            else
+              echo "Release $TAG existiert bereits – Versionsnummer erhöhen für ein neues Release."
+            fi
           else
-            gh release create "$GITHUB_REF_NAME" $DATEIEN \
-              --title "Gleismesslatte $GITHUB_REF_NAME" \
-              --notes "Windows: ZIP herunterladen, entpacken, Gleismesslatte.exe starten (Java 17+ erforderlich). Änderungen siehe CHANGELOG.md."
+            gh release create "$TAG" $DATEIEN --target "$GITHUB_SHA" \
+              --title "Gleismesslatte V$VERSION" \
+              --notes "Windows: Gleismesslatte_V${VERSION}_Windows.zip herunterladen, entpacken, Gleismesslatte.exe starten (Java 17+ erforderlich). Änderungen siehe CHANGELOG.md."
           fi
