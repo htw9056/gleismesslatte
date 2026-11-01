@@ -4,6 +4,8 @@
 
 © Dipl.-Ing. (FH) Stefan Klein · MIT-Lizenz · Java 17 · Windows / Linux / macOS
 
+**Projektseite:** https://htw9056.github.io/gleismesslatte/
+
 ![Gleismesslatte – 3D-Ansicht und Detail Prisma an der Fahrkante](doc/bilder/gleismesslatte.png)
 
 Eine Gleismesslatte trägt zwei lotrecht zur Latte montierte Prismen. Ein Prisma liegt mit
@@ -321,6 +323,7 @@ doc/                      Quellgrafiken (SVG), Bildgenerator, Beispielgeneratore
 eclipse/                  Eclipse-Startkonfigurationen
 launcher/                 Go-Starter für Windows (.exe)
 windows/                  Windows-Paket: LIESMICH, exe_bauen.bat, Paketskript
+docs/                     Projektseite (GitHub Pages)
 gleismesslatte.properties Standardparameter
 ```
 
