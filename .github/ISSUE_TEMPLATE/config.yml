@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Frage zur Anwendung
+    url: https://github.com/htw9056/gleismesslatte/discussions
+    about: Fragen, Erfahrungen und Ideen bitte in den Diskussionen stellen.

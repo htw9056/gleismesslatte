@@ -39,6 +39,7 @@ diese Fehlstellung heraus und bestimmt je Lattenlage
 - [Beispiele](#beispiele)
 - [Aus dem Quellcode bauen](#aus-dem-quellcode-bauen)
 - [Projektaufbau](#projektaufbau)
+- [Fragen und Kontakt](#fragen-und-kontakt)
 - [Lizenz und Haftungsausschluss](#lizenz-und-haftungsausschluss)
 - [English summary](#english-summary)
 
@@ -329,6 +330,18 @@ gleismesslatte.properties Standardparameter
 
 ---
 
+## Fragen und Kontakt
+
+Die Kommunikation läuft ausschließlich über GitHub:
+
+| Anliegen | Wo |
+|---|---|
+| Fragen zur Anwendung, Erfahrungen, Ideen | [Diskussionen](https://github.com/htw9056/gleismesslatte/discussions) |
+| Fehler (bitte mit Beispieldatei, Einstellungen und Version) | [Issues](https://github.com/htw9056/gleismesslatte/issues) |
+| Wünsche für neue Funktionen | [Issues](https://github.com/htw9056/gleismesslatte/issues) |
+
+---
+
 ## Lizenz und Haftungsausschluss
 
 Veröffentlicht unter der [MIT-Lizenz](LICENSE). Die Nutzung, Änderung und Weitergabe ist auch
@@ -340,8 +353,6 @@ fachkundig zu prüfen. Maßgeblich sind die geltenden Regelwerke, z. B. die EBO 
 Richtlinien des jeweiligen Infrastrukturbetreibers. Die Lattenkonstante und die Reflektorhöhe
 sind für jede Latte durch Kalibrierung zu bestimmen.
 
-Fehlermeldungen und Verbesserungsvorschläge sind über
-[Issues](../../issues) willkommen.
 
 ---
 
